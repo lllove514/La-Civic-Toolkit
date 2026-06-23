@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LA Homeless Services Resource Directory</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="site-header">
+        <h1>LA Homeless Services Resource Directory</h1>
+        <p class="subtitle">Shelters, food, medical care, hotlines, and other services in Los Angeles</p>
+    </header>
+
+    <nav class="filter-bar" aria-label="Filter resources">
+        <label for="searchInput" class="visually-hidden">Search resources</label>
+        <input
+            id="searchInput"
+            type="text"
+            placeholder="Search by name, category, or keyword..."
+            aria-describedby="searchHelp"
+        />
+        <span id="searchHelp" class="visually-hidden">Type to filter the list of resources below</span>
+
+        <label for="categoryFilter" class="visually-hidden">Filter by category</label>
+        <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="shelter">Shelters & Housing</option>
+            <option value="food">Food & Meals</option>
+            <option value="medical">Medical & Health</option>
+            <option value="hotline">Hotlines & Crisis</option>
+            <option value="services">Other Services</option>
+        </select>
+    </nav>
+
+    <main id="resourceList" class="resource-grid">
+        <p class="loading">Loading resources...</p>
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            Community project. Listings come from publicly available information,
+            so check details before you rely on them.
+            <a href="https://github.com">Suggest an edit on GitHub</a>
+        </p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

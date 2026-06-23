@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encampment Requests Near a ZIP - LA 311 Lookup</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="page-header">
+        <h1>Encampment Requests Near a ZIP Code</h1>
+        <p class="subtitle">Look up recent homeless encampment 311 service requests near a Los Angeles ZIP code. Data from LA City's MyLA311 API.</p>
+    </header>
+
+    <main>
+        <form id="searchForm" class="search-form">
+            <label for="zipInput" class="visually-hidden">Enter a Los Angeles ZIP code</label>
+            <input
+                id="zipInput"
+                type="text"
+                inputmode="numeric"
+                pattern="[0-9]{5}"
+                maxlength="5"
+                placeholder="e.g. 90013"
+                required
+                aria-describedby="zipHelp"
+            />
+            <button type="submit" id="searchBtn">Search</button>
+        </form>
+        <p id="zipHelp" class="help-text">Enter a 5-digit LA County ZIP code (90001 to 93599).</p>
+
+        <div id="results" aria-live="polite">
+            <p class="initial-message">Enter a ZIP code to find nearby encampment requests.</p>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <p>
+            Data from LA City's <a href="https://data.lacity.org/resource/2cy6-i7zn.json" target="_blank" rel="noopener">MyLA311 dataset</a>
+            over the <a href="https://dev.socrata.com/" target="_blank" rel="noopener">Socrata API</a>. No key needed.
+        </p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

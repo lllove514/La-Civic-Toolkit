@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit a Resource - LA Homeless Services</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="page-header">
+        <h1>Submit a Resource / Volunteer Signup</h1>
+        <p class="subtitle">Help us grow the LA Homeless Services Resource Directory. Submit a resource, suggest an edit, or sign up to volunteer.</p>
+    </header>
+
+    <main>
+        <form id="submitForm" class="submit-form" novalidate>
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required autocomplete="name" />
+                <span class="error-message" id="nameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required autocomplete="email" />
+                <span class="error-message" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="type">Submission Type</label>
+                <select id="type" name="type" required>
+                    <option value="">Select one...</option>
+                    <option value="new-resource">New Resource Suggestion</option>
+                    <option value="edit">Edit to Existing Resource</option>
+                    <option value="volunteer">Volunteer Signup</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Details</label>
+                <textarea id="notes" name="notes" rows="4" placeholder="Resource name, address, phone, website, or how you'd like to help..." required></textarea>
+                <span class="error-message" id="notesError"></span>
+            </div>
+
+            <button type="submit" id="submitBtn">Submit</button>
+            <p id="formStatus" class="form-status" aria-live="polite"></p>
+        </form>
+    </main>
+
+    <footer class="page-footer">
+        <p>
+            This form sends data to a Google Sheet via Google Apps Script.
+            <a href="README.md">See README</a> for setup instructions.
+        </p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

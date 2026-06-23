@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LA Homeless Encampment 311 Requests</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="dashboard-header">
+        <h1>LA Homeless Encampment 311 Requests</h1>
+        <p class="subtitle">Council district and monthly breakdown from MyLA311 data</p>
+    </header>
+
+    <main class="dashboard-main">
+        <section class="chart-card" aria-label="Bar chart of requests by council district">
+            <h2>Requests by Council District</h2>
+            <div class="chart-wrapper">
+                <canvas id="districtChart" width="600" height="400"></canvas>
+            </div>
+        </section>
+
+        <section class="chart-card" aria-label="Line chart of requests over time">
+            <h2>Requests Over Time</h2>
+            <div class="chart-wrapper">
+                <canvas id="monthChart" width="600" height="400"></canvas>
+            </div>
+        </section>
+
+        <section class="stats-card" aria-label="Summary statistics">
+            <h2>Summary</h2>
+            <div id="stats" class="stats-grid">
+                <p>Loading stats...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="dashboard-footer">
+        <p>Data from LA City's <a href="https://data.lacity.org/resource/2cy6-i7zn.json" target="_blank" rel="noopener">MyLA311 dataset</a>, filtered to homeless encampment requests.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

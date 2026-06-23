@@ -1,0 +1,112 @@
+/* reset & base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1a1a2e;
+    background: #f5f6fa;
+    padding: 1rem;
+}
+
+/* header */
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #16213e;
+}
+
+.subtitle {
+    color: #555;
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+}
+
+/* cards grid */
+.dashboard-main {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 700px) {
+    .dashboard-main {
+        grid-template-columns: 1fr 1fr;
+    }
+    .stats-card {
+        grid-column: 1 / -1;
+    }
+}
+
+.chart-card, .stats-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.chart-card h2, .stats-card h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #16213e;
+}
+
+.chart-wrapper {
+    position: relative;
+    width: 100%;
+    max-height: 300px;
+}
+
+/* stats grid */
+.stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.stat-item {
+    flex: 1 1 140px;
+    background: #f0f4ff;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    text-align: center;
+}
+
+.stat-item .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f3460;
+}
+
+.stat-item .stat-label {
+    font-size: 0.8rem;
+    color: #555;
+    margin-top: 0.15rem;
+}
+
+/* footer */
+.dashboard-footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.dashboard-footer a {
+    color: #0f3460;
+}
